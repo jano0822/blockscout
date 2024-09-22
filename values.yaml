@@ -1,0 +1,24 @@
+# Database settings
+postgresql:
+  enabled: true
+  image: postgres:13
+  username: blockscout
+  password: blockscout_pass
+  database: blockscout_db
+api:
+  replicas: 2
+  image: blockscout/blockscout:latest
+  resources:
+    requests:
+      cpu: "250m"
+      memory: "256Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+indexer:
+  replicas: 1
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  cpuUtilizationPercentage: 80

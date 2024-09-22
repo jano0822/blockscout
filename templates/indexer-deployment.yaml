@@ -1,0 +1,23 @@
+# templates/indexer-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockscout-indexer
+spec:
+  replicas: {{ .Values.indexer.replicas }}
+  selector:
+    matchLabels:
+      app: blockscout-indexer
+  template:
+    metadata:
+      labels:
+        app: blockscout-indexer
+    spec:
+      containers:
+        - name: blockscout-indexer
+          image: blockscout/blockscout:v2.0.0
+          env:
+            - name: ETHEREUM_NETWORK
+              value: sepolia
+            - name: DATABASE_URL
+              value: "postgres://{{ .Values.postgresql.username }}:{{ .Values.postgresql.password }}@postgres/{{ .Values.postgresql.database }}"

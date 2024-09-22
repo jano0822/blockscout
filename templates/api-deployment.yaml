@@ -1,0 +1,23 @@
+# templates/api-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockscout-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blockscout-api
+  template:
+    metadata:
+      labels:
+        app: blockscout-api
+    spec:
+      containers:
+        - name: blockscout-api
+          image: blockscout/blockscout:latest
+          ports:
+            - containerPort: 4000
+          env:
+            - name: DATABASE_URL
+              value: "postgres://{{ .Values.postgresql.username }}:{{ .Values.postgresql.password }}@postgres/{{ .Values.postgresql.database }}"
