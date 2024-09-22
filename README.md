@@ -13,4 +13,4 @@ This project demonstrates how to write a Helm chart to deploy Blockscout.
 
 ### Steps
 
-Refer to the document: https://docs.google.com/document/d/1ri8HpFoiXrLezSjmQLTwwb_oAp2m3Zf9HeF6zI_g2dQ/edit?usp=sharing
+Refer to the document: [Blockscout]([https://play.google.com/store/apps/details?id=com.vulcan.millgrader&hl=en-SG](https://docs.google.com/document/d/1_JCrEvCsbX-fuE7ojt04dSnQVIOshg_UAwGeHP2sxMI/edit?usp=sharing))
