@@ -1,4 +1,3 @@
-# Database settings
 postgresql:
   enabled: true
   image: postgres:13

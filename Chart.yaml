@@ -1,5 +1,5 @@
 apiVersion: v2
 name: blockscout
-description: A Helm chart for deploying Blockscout on Kubernetes
+description: Helm chart to deploy Blockscout on Kubernetes
 version: 0.1.0
 appVersion: "v2.0.0"
